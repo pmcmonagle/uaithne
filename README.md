@@ -1,8 +1,8 @@
 # Uaithne
 
-*Uaithne* (roughly "OO-ah-nyeh") is the Dagda's harp in the Irish Mythological Cycle, the harp that put the seasons in their order. The app was called Yuzu until October 2026; a workspace made then is renamed on open (`yuzu.toml` → `uaithne.toml`, `.yuzu/` → `.uaithne/`).
+*Uaithne* (roughly "OO-ah-nyeh") is the Dagda's harp in the Irish Mythological Cycle, the harp that put the seasons in their order.
 
-A live-coding music environment for Strudel and Tidal.
+This is a live-coding music environment for Strudel and Tidal.
 
 ## Install (Linux)
 
