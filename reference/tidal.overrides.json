@@ -1,0 +1,156 @@
+{
+  "$comment": "Hand-curated Tidal reference entries, merged over the generated ones by tools/gen-tidal-ref.mjs. A value of null drops an entry.",
+  "d1": {
+    "aliases": [
+      "d2",
+      "d3",
+      "d4",
+      "d5",
+      "d6",
+      "d7",
+      "d8",
+      "d9",
+      "d10",
+      "d11",
+      "d12",
+      "d13",
+      "d14",
+      "d15",
+      "d16"
+    ],
+    "signature": "d1 :: ControlPattern -> IO ()",
+    "synopsis": "Plays a pattern on channel 1, replacing whatever d1 was playing.",
+    "description": "`d1` to `d16` each play one pattern at a time: evaluating `d1 $ …` again swaps in the new pattern on the next cycle. `d1` to `d12` also send to SuperDirt orbits 0 to 11, so each has its own effects bus. To silence one, play `silence` on it, or use `hush` to stop everything.\n\n```haskell\nd1 $ s \"bd*2 [~ sn]\"\n```\n\n```haskell\nd2 $ n \"0 .. 7\" # s \"arpy\"\n```",
+    "tags": [
+      "performance"
+    ]
+  },
+  "p": {
+    "synopsis": "Plays a pattern under any id, number or name, like d1.",
+    "description": "`p` takes an id and a pattern. `d1` is `p 1` (plus orbit 0); a name works too, which helps when patterns come and go.\n\n```haskell\np \"drums\" $ s \"bd*4\"\n```\n\n```haskell\np \"drums\" silence\n```",
+    "tags": [
+      "performance"
+    ]
+  },
+  "hush": {
+    "synopsis": "Silences every pattern.",
+    "description": "Stops everything that's playing, on every channel (`d1` to `d16` and any `p` ids). Uaithne's `Ctrl+.` does the same.\n\n```haskell\nhush\n```",
+    "tags": [
+      "performance"
+    ]
+  },
+  "panic": {
+    "synopsis": "Silences everything and cuts off sounds that are still ringing.",
+    "description": "Like `hush`, but also sends SuperDirt's `superpanic`, which stops long samples and synth tails at once.\n\n```haskell\npanic\n```",
+    "tags": [
+      "performance"
+    ]
+  },
+  "only": {
+    "synopsis": "Silences everything else, then runs the given action.",
+    "description": "`only $ d1 $ …` hushes every other pattern and plays this one.\n\n```haskell\nonly $ d1 $ s \"bd*4\"\n```",
+    "tags": [
+      "performance"
+    ]
+  },
+  "mute": {
+    "synopsis": "Mutes one pattern, keeping it ready to unmute.",
+    "description": "The pattern keeps running silently; `unmute` brings it back in time.\n\n```haskell\nmute 1\n```\n\n```haskell\nunmute 1\n```",
+    "tags": [
+      "performance"
+    ]
+  },
+  "unmute": {
+    "synopsis": "Unmutes a pattern that was muted with mute.",
+    "description": "\n\n```haskell\nunmute 1\n```",
+    "tags": [
+      "performance"
+    ]
+  },
+  "unmuteAll": {
+    "synopsis": "Unmutes every muted pattern.",
+    "description": "\n\n```haskell\nunmuteAll\n```",
+    "tags": [
+      "performance"
+    ]
+  },
+  "solo": {
+    "synopsis": "Plays only this pattern (and other soloed ones), muting the rest.",
+    "description": "Undo it with `unsolo`, or `unsoloAll`.\n\n```haskell\nsolo 2\n```\n\n```haskell\nunsolo 2\n```",
+    "tags": [
+      "performance"
+    ]
+  },
+  "unsolo": {
+    "synopsis": "Undoes solo for one pattern.",
+    "description": "\n\n```haskell\nunsolo 2\n```",
+    "tags": [
+      "performance"
+    ]
+  },
+  "unsoloAll": {
+    "synopsis": "Undoes solo for every pattern.",
+    "description": "\n\n```haskell\nunsoloAll\n```",
+    "tags": [
+      "performance"
+    ]
+  },
+  "once": {
+    "synopsis": "Plays one cycle of a pattern, once, right now.",
+    "description": "Handy for trying a sound without starting a loop.\n\n```haskell\nonce $ s \"arpy*4\"\n```",
+    "tags": [
+      "performance"
+    ]
+  },
+  "asap": {
+    "synopsis": "The same as once.",
+    "description": "\n\n```haskell\nasap $ s \"bd sn\"\n```",
+    "tags": [
+      "performance"
+    ]
+  },
+  "first": {
+    "synopsis": "Plays the first cycle of a pattern once.",
+    "description": "Unlike `once`, it plays cycle 0 rather than the current cycle.\n\n```haskell\nfirst $ s \"<bd sn>\"\n```",
+    "tags": [
+      "performance"
+    ]
+  },
+  "all": {
+    "synopsis": "Applies a function to everything that's playing.",
+    "description": "`all` transforms the mix of all patterns, for example to speed everything up. `all id` puts it back.\n\n```haskell\nall $ fast 2\n```\n\n```haskell\nall id\n```",
+    "tags": [
+      "performance"
+    ]
+  },
+  "nudgeAll": {
+    "synopsis": "Shifts every pattern in time by a number of seconds.",
+    "description": "Use it to line Tidal up with other gear. Positive values make Tidal later.\n\n```haskell\nnudgeAll 0.05\n```",
+    "tags": [
+      "performance"
+    ]
+  },
+  "getcps": {
+    "synopsis": "Reads the current tempo in cycles per second.",
+    "description": "\n\n```haskell\ngetcps\n```",
+    "tags": [
+      "performance"
+    ]
+  },
+  "getnow": {
+    "synopsis": "Reads the current cycle position.",
+    "description": "\n\n```haskell\ngetnow\n```",
+    "tags": [
+      "performance"
+    ]
+  },
+  "list": {
+    "synopsis": "Lists the patterns that are playing, and which are muted or soloed.",
+    "description": "\n\n```haskell\nlist\n```",
+    "tags": [
+      "performance"
+    ]
+  },
+  "superdirt": null,
+  "uaithneEditor": null
+}

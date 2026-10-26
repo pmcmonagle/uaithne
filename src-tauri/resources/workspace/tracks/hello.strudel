@@ -1,0 +1,11 @@
+// Welcome to Uaithne!
+// Ctrl+Enter evaluates the buffer, Ctrl+. hushes.
+
+setcpm(120/4)
+
+$: note("<c3 eb3 g3 bb2>(3,8)")
+  .s("sawtooth").lpf(sine.range(400, 2000).slow(8)).lpq(8)
+  .decay(.2).sustain(0)
+
+$: note("[c5 eb5 g5]*2 <bb4 d5>").s("triangle")
+  .gain(.4).delay(.3).room(.4)

@@ -1,0 +1,66 @@
+{
+  "$comment": "Hand-written Strudel reference entries, merged over the generated ones by tools/gen-strudel-ref.mjs. A value of null drops an entry. midi and osc are Uaithne's own implementations (WebKitGTK has no WebMIDI; there's no Node OSC bridge), and the inline visuals are drawn by Uaithne.",
+  "midi": {
+    "signature": "midi(output)",
+    "params": [
+      {
+        "name": "output",
+        "type": "string",
+        "doc": "optional: an output port's name, or part of it (case doesn't matter). Without one, the output chosen in Settings (Ctrl+,) is used, else the first one."
+      }
+    ],
+    "synopsis": "Plays the pattern on a MIDI output instead of Strudel's own sounds.",
+    "description": "Each event's `note` is sent as a note on, and its note off follows after the event's length. `velocity` (default 0.9) times `gain` sets the velocity. `midichan` picks the channel (1–16), `ccn` with `ccv` (0–1) sends a control change, and `progNum` a program change. `midiport` picks the output per event, like the argument.\n\nIn Uaithne, MIDI goes out through the system (ALSA on Linux), timed to line up with the audio. Pick a default output in Settings (`Ctrl+,`).",
+    "examples": [
+      "note(\"c4 e4 g4 b4\").midi()",
+      "note(\"<c3 eb3 g3>*4\").midichan(2).velocity(\"0.5 1\").midi(\"through\")",
+      "s(\"x*4\").ccn(74).ccv(sine.slow(4)).midi()"
+    ],
+    "tags": [
+      "midi",
+      "output"
+    ]
+  },
+  "osc": {
+    "signature": "osc(address)",
+    "params": [
+      {
+        "name": "address",
+        "type": "string",
+        "doc": "optional OSC address; /dirt/play by default"
+      }
+    ],
+    "synopsis": "Sends each event as an OSC message, to SuperDirt by default.",
+    "description": "Each event goes out as `address key value key value …` with all of its controls, plus `cps`, `cycle` and `delta` (seconds), in a bundle timestamped for when it should play. The target is set in Settings (`Ctrl+,`); it's SuperDirt (`127.0.0.1:57120`) to begin with, so a pattern with `.osc()` plays through SuperCollider, the same engine as Tidal. `oscport` sends to another port on this machine.\n\nStrudel's `note` (a MIDI number) is sent as `midinote`, since SuperDirt's `note` counts from middle C. Tidal must be running for SuperDirt to hear it.",
+    "examples": [
+      "s(\"bd*2 [~ sn] hh*4\").osc()",
+      "n(\"0 .. 7\").s(\"arpy\").room(0.3).osc()"
+    ],
+    "tags": [
+      "output"
+    ]
+  },
+  "_pianoroll": {
+    "aliases": [
+      "_punchcard",
+      "_wordfall",
+      "_spiral",
+      "_pitchwheel",
+      "_scope",
+      "_tscope",
+      "_fscope",
+      "_spectrum"
+    ],
+    "signature": "_pianoroll(options)",
+    "synopsis": "Shows a visual right under its line in the editor, instead of in the visuals panel.",
+    "description": "Every visual has an inline form with a leading underscore: `._pianoroll()`, `._punchcard()`, `._wordfall()`, `._spiral()`, `._pitchwheel()`, `._scope()`, `._fscope()` and `._spectrum()`. Each draws on its own canvas under the line where it's called, and moves with the code as you edit. They take the same options as the plain forms, plus `height` (and `width`) in pixels. The plain forms (`.pianoroll()` …) draw in the visuals panel (`Ctrl+J`), one beside the other.",
+    "examples": [
+      "note(\"c2 a2 eb2\").euclid(5,8).s(\"sawtooth\").lpf(400)._pianoroll()",
+      "s(\"bd*2 [~ sd] hh*4\")._punchcard({ labels: 1 })",
+      "note(\"c3 e3 g3 b3\").s(\"sawtooth\").lpf(800)._scope({ height: 60 })"
+    ],
+    "tags": [
+      "visuals"
+    ]
+  }
+}

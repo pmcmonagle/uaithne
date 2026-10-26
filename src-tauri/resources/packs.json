@@ -1,0 +1,58 @@
+[
+  {
+    "id": "dirt-samples",
+    "name": "Dirt-Samples",
+    "source": "github:tidalcycles/dirt-samples",
+    "description": "The classic TidalCycles/SuperDirt library: bd, sn, hh, arpy, bass, breaks and ~200 more.",
+    "sounds": 218,
+    "files": 2038
+  },
+  {
+    "id": "tidal-drum-machines",
+    "name": "Tidal Drum Machines",
+    "source": "https://raw.githubusercontent.com/felixroos/dough-samples/main/tidal-drum-machines.json",
+    "description": "Classic drum machines, named <Machine>_<part> for use with .bank(\"RolandTR909\").",
+    "sounds": 683,
+    "files": 2348
+  },
+  {
+    "id": "uzu-drumkit",
+    "name": "Uzu Drumkit",
+    "source": "github:tidalcycles/uzu-drumkit",
+    "description": "A compact modern drum kit: bd, sd, hh, oh, cp, rim, toms, cymbals.",
+    "sounds": 16,
+    "files": 41
+  },
+  {
+    "id": "piano",
+    "name": "Piano",
+    "source": "https://raw.githubusercontent.com/felixroos/dough-samples/main/piano.json",
+    "description": "Salamander Grand Piano, pitched: use with note().",
+    "sounds": 1,
+    "files": 29
+  },
+  {
+    "id": "vcsl",
+    "name": "VCSL",
+    "source": "https://raw.githubusercontent.com/felixroos/dough-samples/main/vcsl.json",
+    "description": "Versilian Community Sample Library: orchestral, folk and percussion instruments, many pitched.",
+    "sounds": 128,
+    "files": 1908
+  },
+  {
+    "id": "emu-sp12",
+    "name": "E-mu SP-12",
+    "source": "https://raw.githubusercontent.com/felixroos/dough-samples/main/EmuSP12.json",
+    "description": "The SP-12 drum kit under plain names (bd, sd, hh, …), as strudel.cc's defaults.",
+    "sounds": 14,
+    "files": 68
+  },
+  {
+    "id": "mridangam",
+    "name": "Mridangam",
+    "source": "https://raw.githubusercontent.com/felixroos/dough-samples/main/mridangam.json",
+    "description": "South Indian mridangam strokes.",
+    "sounds": 13,
+    "files": 131
+  }
+]

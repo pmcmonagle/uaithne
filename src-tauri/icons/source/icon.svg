@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <!-- Uaithne: the Dagda's harp. Regenerate the icons with `npm run tauri icon src-tauri/icons/source/icon.svg`. -->
+  <rect x="64" y="64" width="896" height="896" rx="200" fill="#1e2127"/>
+  <g fill="none" stroke="#f2c14e" stroke-linecap="round" stroke-linejoin="round">
+    <!-- strings: straight down from the neck to the soundbox -->
+    <g stroke-width="11" opacity="0.85">
+      <line x1="410" y1="250" x2="410" y2="450"/>
+      <line x1="466" y1="256" x2="466" y2="590"/>
+      <line x1="522" y1="268" x2="522" y2="730"/>
+      <line x1="578" y1="270" x2="578" y2="800"/>
+      <line x1="634" y1="248" x2="634" y2="752"/>
+      <line x1="690" y1="214" x2="690" y2="670"/>
+    </g>
+    <!-- soundbox, slanting down from the back of the neck -->
+    <path d="M318 238 L 560 846" stroke-width="64"/>
+    <!-- neck, with its swoop -->
+    <path d="M318 238 C 380 190, 440 230, 500 262 S 640 250, 720 186" stroke-width="40"/>
+    <!-- forepillar, curving out to meet the foot of the soundbox -->
+    <path d="M720 186 C 790 420, 760 700, 560 846" stroke-width="44"/>
+  </g>
+</svg>

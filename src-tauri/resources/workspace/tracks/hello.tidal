@@ -1,0 +1,7 @@
+-- Tidal playback arrives in Phase 3.
+-- Ctrl+Enter evaluates the block under the cursor.
+
+d1 $ sound "bd*2 [~ sn] hh*4"
+  # room 0.3
+
+d2 $ n "0 .. 7" # sound "arpy" # speed 1.5

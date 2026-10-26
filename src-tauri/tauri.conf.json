@@ -1,0 +1,51 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Uaithne",
+  "version": "0.1.0",
+  "identifier": "com.exadyne.uaithne",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../build"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Uaithne",
+        "width": 1400,
+        "height": 900,
+        "minWidth": 800,
+        "minHeight": 500
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": [
+      "deb",
+      "appimage"
+    ],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "category": "Music",
+    "shortDescription": "Live-coding music in Strudel and Tidal",
+    "longDescription": "A desktop live-coding environment for Strudel and TidalCycles: one file per track, vim keybindings, a shared sample library, a searchable reference with hints, visuals, recording and MIDI/OSC out.",
+    "publisher": "Paul McMonagle",
+    "license": "AGPL-3.0-or-later",
+    "licenseFile": "../LICENSE",
+    "linux": {
+      "appimage": {
+        "bundleMediaFramework": true
+      }
+    }
+  }
+}

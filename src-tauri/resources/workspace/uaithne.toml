@@ -1,0 +1,18 @@
+# Uaithne workspace configuration.
+
+[editor]
+vim = true
+font_size = 15
+# leader = "\\"              # what <leader> means in vim_mappings (" " for space)
+# vim_mappings = [           # vimrc-style: map, nmap, imap, vmap and the noremap forms
+#   "inoremap jk <Esc>",
+#   "nnoremap <leader>r :rec<CR>",
+# ]
+
+[tidal]
+# ghci = "ghci"              # or "stack exec -- ghci"
+# boot_file = ""             # your own BootTidal.hs; empty uses Uaithne's
+# sclang = "sclang"
+# port = 57120               # SuperDirt's port
+# output = "default"         # PipeWire sink for SuperCollider's audio
+# highlight = true           # light up the code that's playing
